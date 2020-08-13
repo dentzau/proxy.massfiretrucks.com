@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+set -eo pipefail
+
+main() {
+  local port=${PORT:-8080}
+
+  docker rm --force mft-proxy || true
+  docker build . -t mft-proxy
+  docker run \
+    --detach \
+    --publish $port:80 \
+    --name=mft-proxy \
+    mft-proxy:latest
+
+  echo ""
+  echo "Proxy started at http://localhost:8080"
+}
+
+main "$@"
