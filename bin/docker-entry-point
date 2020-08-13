@@ -4,7 +4,7 @@ set -eo pipefail
 main() {
   PORT="${PORT:-80}"
   envsubst < /etc/nginx/nginx.conf > /etc/nginx/nginx.conf
-  nginx
+  nginx -g 'daemon off;'
 }
 
 main "$@"
