@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -eo pipefail
+
+main() {
+  PORT=${PORT:-80}
+  envsubt "\$PORT" < /etc/nginx/nginx.conf > /etc/nginx/nginx.conf
+  nginx
+}
+
+main "$@"
