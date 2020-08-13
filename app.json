@@ -1,0 +1,8 @@
+{
+    "name": "MassFireTrucks Proxy",
+    "description": "An http reverse proxy for massfiretrucks.com",
+    "keywords": ["proxy", "nginx"],
+    "website": "https://massfiretrucks.com",
+    "repository": "https://github.com/nathandentzau/proxy.massfiretrucks.com",
+    "stack": "container"
+}
