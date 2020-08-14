@@ -2,9 +2,8 @@
 set -eo pipefail
 
 main() {
-  PORT="${PORT:-80}"
-  envsubst < /etc/nginx/conf.d/proxy.conf > /etc/nginx/conf.d/proxy.conf
-  nginx -g 'daemon off;'
+  envsubst < /etc/nginx/conf.d/proxy.conf.template > /etc/nginx/conf.d/proxy.conf
+  nginx
 }
 
 main "$@"

@@ -10,6 +10,7 @@ main() {
     --detach \
     --publish $port:80 \
     --name=mft-proxy \
+    --env PORT=80 \
     mft-proxy:latest
 
   echo ""
